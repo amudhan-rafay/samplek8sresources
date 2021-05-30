@@ -1,0 +1,17 @@
+kind: ClusterOverride
+apiVersion: config.rafay.dev/v2
+metadata:
+  name: override-dev-env-clusters
+spec:
+  clusterSelector: env=dev
+  resourceSelector: rafay.dev/name=override-workload
+  type: ClusterOverrideTypeWorkload
+  overrideValues: |
+    replicaCount: 2
+    image:
+      repository: nginx
+      pullPolicy: Always
+      tag: "1.18.0"
+    service:
+      type: ClusterIP
+      port: 8000
