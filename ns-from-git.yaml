@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ns-from-git
+  name: demo-namespace
   labels:
     env: "dev"
   annotations:
